@@ -25,13 +25,14 @@ class CbJobController extends Controller
     /**
      * Store a jobupdate request
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        dd($request->request->all()) ;
-        $attributes=request()->validate([
+        // dd($request->request->all());
+        $attributes=request()->validate(
+            [
             'JobNumber'=>'alpha_num|required',
             'CustOrderNum'=>'alpha_num|required',
             'Reg'=>'alpha_num|required',
@@ -51,7 +52,8 @@ class CbJobController extends Controller
             'JobCancelled'=>'boolean',
             'JobAborted'=>'boolean',
             'notes'=>'string|nullable'
-        ]);
+            ]
+        );
 
         $payload=json_encode($attributes);
         $attributes['webhook_payload']=$payload;
