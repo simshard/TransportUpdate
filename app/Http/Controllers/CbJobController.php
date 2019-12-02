@@ -78,40 +78,17 @@ class CbJobController extends Controller
                 'json'=>$attributes,
             ]
         );
-        // $res = (string) $response->getBody();
-        //  Log::info($res);
-        //  dd($res );
+        $res = (string) $response->getBody();
+        Log::info($res);
+        dd($res);
 
         $output=json_decode($response->getBody()->getContents());
-
-
-
         print_r($output);
 
-
-        /* ASSOC json_decode with true param
-if ($output['error']) {
-                   echo $output['error'] ;
-               }
-         if ($output['success']) {
-             $output['success'] ;
-         }
-
-*/
-
-/*
-STD OBJ
-if ($output && true === $output->success) {
-    // success
-} else {
-    //failure
-} */
-
-
         //   $rez=$response->getBody()->getContents();
-     //   Log::info($rez);
-     //   $contents = json_decode($rez);
-     //   dd($contents);
+        // Log::info($rez);
+        // $contents = json_decode($rez);
+         // dd($contents);
          //$contents->error  OR $contents->success
     }
 }
