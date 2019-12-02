@@ -25,8 +25,22 @@
                   value="{{old('CustOrderNum',$cbJob->CustOrderNum)}}">
     </div>
 
+        <div class="form-group">
+        <label for="Progress"> Job Status
+            <span class="text-danger">* required</span>
+        </label>
+        <select required="required" id="Progress" name="Progress" class="form-control  col-md-6 {{ $errors->has('Progress')?'is-invalid':'' }}">
+        <option value="">Please select Job Status...</option>
+            @foreach($progressArr as $status)
+                 <option value="{{$status}}"  {{$status==old('status',$cbJob->Progress)?'selected':''}}>
+                   {{$status}}
+                 </option>
+            @endforeach
+          </select>
+    </div>
+
     <div class="form-group">
-        <label for="Reg"> Registration
+        <label for="Reg"> Vehicle registration
             <span class="text-danger">* required</span>
         </label>
         <input  required="required" name="Reg" id="Reg" type="text"
@@ -35,86 +49,79 @@
     </div>
 
     <div class="form-group">
-        <label for="DueDate"> Due Date (YYYY-MM-DD) </label>
+        <label for="DueDate"> Due Date <span class="text-muted">(YYYY-MM-DD)</span> </label>
         <input name="DueDate" id="DueDate" type="text"
             class="form-control col-md-6 {{ $errors->has('DueDate')?'is-invalid':'' }}"
             value="{{old('DueDate',$cbJob->DueDate)}}">
     </div>
 
     <div class="form-group">
-        <label for="ColDate"> Collection Date </label>
+        <label for="ColDate"> Collection Date <span class="text-muted">(YYYY-MM-DD)</span></label>
         <input name="ColDate" id="ColDate" type="text"
             class="form-control col-md-6 {{ $errors->has('ColDate')?'is-invalid':'' }}"
             value="{{old('ColDate',$cbJob->ColDate)}}">
     </div>
 
     <div class="form-group">
-        <label for="DelDate"> Delivery Date </label>
+        <label for="DelDate"> Delivery Date <span class="text-muted">(YYYY-MM-DD)</span></label>
         <input name="DelDate" id="DelDate" type="text"
             class="form-control col-md-6 {{ $errors->has('DelDate')?'is-invalid':'' }}"
             value="{{old('DelDate',$cbJob->DelDate)}}">
     </div>
 
-    <div class="form-group">
-        <label for="Progress"> Progress
-            <span class="text-danger">* required</span>
-        </label>
-        <input required="required" name="Progress" id="Progress" type="text"
-            class="form-control col-md-6 {{ $errors->has('Progress')?'is-invalid':'' }}"
-            value="{{old('Progress',$cbJob->Progress)}}">
-    </div>
+
 
     <div class="form-group">
-        <label for="POCName"> POC Name </label>
+        <label for="POCName"> Proof of Collection Name </label>
         <input name="POCName" id="POCName" type="text"
             class="form-control col-md-6 {{ $errors->has('POCName')?'is-invalid':'' }}"
             value="{{old('POCName',$cbJob->POCName)}}">
     </div>
 
     <div class="form-group">
-        <label for="POCDate"> POCDate </label>
+        <label for="POCDate"> Proof of Collection Date <span class="text-muted">(YYYY-MM-DD)</span></label>
         <input name="POCDate" id="POCDate" type="text"
             class="form-control col-md-6 {{ $errors->has('POCDate')?'is-invalid':'' }}"
             value="{{old('POCDate',$cbJob->POCDate)}}">
     </div>
 
     <div class="form-group">
-        <label for="POCTime"> POC Time </label>
+        <label for="POCTime"> Proof of Collection Time <span class="text-muted">(hh:mm:ss)</span></label>
         <input name="POCTime" id="POCTime" type="text"
             class="form-control col-md-6 {{ $errors->has('POCTime')?'is-invalid':'' }}"
             value="{{old('POCTime',$cbJob->POCTime)}}">
     </div>
 
     <div class="form-group">
-        <label for="POCMiles"> POC Miles </label>
+        <label for="POCMiles"> Proof of Collection Miles </label>
         <input name="POCMiles" id="POCMiles" type="text"
             class="form-control col-md-6 {{ $errors->has('POCMiles')?'is-invalid':'' }}"
             value="{{old('POCMiles',$cbJob->POCMiles)}}">
     </div>
 
     <div class="form-group">
-        <label for="PODName"> POD Name </label>
+        <label for="PODName"> Proof of Delivery  Name </label>
         <input name="PODName" id="PODName" type="text"
             class="form-control col-md-6 {{ $errors->has('PODName')?'is-invalid':'' }}"
             value="{{old('PODName',$cbJob->PODName)}}">
     </div>
 
     <div class="form-group">
-        <label for="PODDate"> POD Date </label>
+        <label for="PODDate"> Proof of Delivery Date <span class="text-muted">(YYYY-MM-DD)</span></label>
         <input name="PODDate" id="PODDate" type="text"
             class="form-control col-md-6 {{ $errors->has('PODDate')?'is-invalid':'' }}"
             value="{{old('PODDate',$cbJob->PODDate)}}">
     </div>
 
     <div class="form-group">
-        <label for="PODTime"> POD Time </label>
+        <label for="PODTime"> Proof of Delivery Time <span class="text-muted">(hh:mm:ss)</span></label>
         <input name="PODTime" id="PODTime" type="text"
             class="form-control col-md-6 {{ $errors->has('PODTime')?'is-invalid':'' }}"
             value="{{old('PODTime',$cbJob->PODTime)}}">
     </div>
 
     <div class="form-group">
-        <label for="PODMiles"> POD Miles </label>
+        <label for="PODMiles"> Proof of Delivery Miles </label>
         <input name="PODMiles" id="PODMiles" type="text"
             class="form-control col-md-6 {{ $errors->has('PODMiles')?'is-invalid':'' }}"
             value="{{old('PODMiles',$cbJob->PODMiles)}}">

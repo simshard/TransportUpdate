@@ -30,8 +30,7 @@ class CbJobController extends Controller
      */
     public function store(Request $request)
     {
-
-       //dd( $request->request->all()) ;
+        dd($request->request->all()) ;
         $attributes=request()->validate([
             'JobNumber'=>'alpha_num|required',
             'CustOrderNum'=>'alpha_num|required',
@@ -83,22 +82,32 @@ class CbJobController extends Controller
         //  Log::info($res);
         //  dd($res );
 
-        $output=json_decode($response->getBody()->getContents(), true);
+        $output=json_decode($response->getBody()->getContents());
 
 
 
-          print_r($output);
+        print_r($output);
 
 
-        /*
+        /* ASSOC json_decode with true param
 if ($output['error']) {
-            echo $output['error'] ;
-        }
-  if ($output['success']) {
-      $output['success'] ;
-  }
+                   echo $output['error'] ;
+               }
+         if ($output['success']) {
+             $output['success'] ;
+         }
 
 */
+
+/*
+STD OBJ
+if ($output && true === $output->success) {
+    // success
+} else {
+    //failure
+} */
+
+
         //   $rez=$response->getBody()->getContents();
      //   Log::info($rez);
      //   $contents = json_decode($rez);
