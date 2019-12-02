@@ -40,7 +40,6 @@ class CbJobController extends Controller
             'DueDate'=>'date|nullable',
             'ColDate'=>'date|nullable',
             'DelDate'=>'date|nullable',
-            'Progress'=>'string|required',
             'POCName'=>'string|nullable',
             'POCDate'=>'date|nullable',
             'POCTime'=>'string|nullable',
