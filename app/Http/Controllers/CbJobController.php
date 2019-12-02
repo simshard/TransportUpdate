@@ -80,16 +80,17 @@ class CbJobController extends Controller
             ]
         );
         $res = (string) $response->getBody();
-        Log::info($res);
+        Log::info($res); //log response
         dd($res);
 
-        $output=json_decode($response->getBody()->getContents());
-        print_r($output);
+        //$output=json_decode($response->getBody()->getContents(),true);
+        //print_r($output);
 
         //   $rez=$response->getBody()->getContents();
         // Log::info($rez);
         // $contents = json_decode($rez);
          // dd($contents);
-         //$contents->error  OR $contents->success
+         //parse response $contents->error  OR $contents->success
+         //  or decode_json as an array with  true option
     }
 }
